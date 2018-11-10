@@ -1,0 +1,13 @@
+name: stack-vm
+version: 0.1.0
+
+authors:
+  - Glen Aultman-Bettridge <glenab@koansolutions.net>
+
+targets:
+  stack-vm:
+    main: src/stack-vm.cr
+
+crystal: 0.26.1
+
+license: MIT
