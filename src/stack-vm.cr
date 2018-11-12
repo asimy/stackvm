@@ -49,6 +49,18 @@
         puts "adding", @data[0], @data[1]
         result = @data.pop + @data.pop
         @data.push(result)
+      when 2 # sub
+        puts "subtracting", @data[0], @data[1]
+        result = @data.pop - @data.pop
+        @data.push(result)
+      when 3 # mul
+        puts "multiplying", @data[0], @data[1]
+        result = @data.pop * @data.pop
+        @data.push(result)
+      when 4 # div (integer division)
+        puts "dividing", @data[0], @data[1]
+        result = @data.pop / @data.pop
+        @data.push(result)
       end
     end
 
@@ -67,18 +79,19 @@
     end
 
     def display_machine(instruction_idx)
-      puts "-"*35
+      puts "-"*50
       puts "program".ljust(30) + "program_pointer"
       @program.each_with_index do |instr, idx|
         pointer = idx == instruction_idx ? "<-" : ""
         puts instr.to_s(base: 16) + pointer
       end
+      puts "*"*50
 
       puts "data".ljust(30) + "data_pointer"
       @data.each do |datum|
-        puts datum.to_s(base: 16)
+        puts datum.to_s
       end
-      puts "-"*35
+      puts "-"*50
 
     end
 
